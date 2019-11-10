@@ -27,5 +27,5 @@ class StatusViewset(viewsets.ModelViewSet):
     http_method_names = ['get','head']
     queryset = Status.objects.all()
     serializer_class = StatusSerializer
-    filterset_fields = ('text')
+    filterset_fields = ('text',)
 
