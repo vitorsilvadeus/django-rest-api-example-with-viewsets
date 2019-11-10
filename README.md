@@ -1,7 +1,9 @@
 # Django simple REST API example with rest_framework ViewSets
 
 One end point with HEAD, GET, POST ,DELETE and PATCH http methods to a pizza ordering simple logic.
-GET end points to other data information
+GET and HEAD end points to other data information.
+
+![Alt text](test_images/api_root.png?raw=true "API root")
 
 POST order example:
 
@@ -23,7 +25,7 @@ PATCH validation response:
 
 DELETE order example:
 
-![Alt text](test_images/delete_order.png?raw=true "validation in PATCH update")
+![Alt text](test_images/order_delete.png?raw=true "validation in PATCH update")
 
 ### Installing
 
