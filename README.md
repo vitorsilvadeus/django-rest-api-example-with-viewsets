@@ -31,6 +31,8 @@ DELETE order example:
 
 ### Installation on ubuntu 18.04
 
+git clone https://github.com/VitorSDDF/django-rest-api-example-with-viewsets.git
+
 #### Install and set up of Postgres:
 
 ``` bash
@@ -62,24 +64,24 @@ source ~/.local/bin/virtualenvwrapper.sh "
 
 ```
 
+#### Install virtualenv dependencies:
 
-
+``` bash
+    pip install -r requirements.txt
 ```
-until finished
-```
 
-End with an example of getting some data out of the system or using it for a little demo
+#### Set up the server:
+``` bash
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py loaddata pizza
+    python manage.py runserver
+```
 
 ## Running the tests
 
 python manage.py test
 
-For testing the orders endpoint http methods
+for testing the orders endpoint http methods
 
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
