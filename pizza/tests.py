@@ -14,7 +14,6 @@ class TestOrderViewSet(TestCase):
         self.assertTrue(response.data)
 
     def test_delete(self):
-        print(Order.objects.all().first().id)
         url = reverse('orders-detail',args=[Order.objects.all().first().id])
 
         response = self.client.delete(url)
