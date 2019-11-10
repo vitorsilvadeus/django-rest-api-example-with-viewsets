@@ -31,31 +31,33 @@ DELETE order example:
 
 Installation on ubuntu 18.04
 
-Install and set up of Postgres:
+##Install and set up of Postgres:
 
-### sudo apt update
-### sudo apt install postgresql postgresql-contrib postgis postgresql-11-postgis-2.5
-### sudo -u postgres psql -c 'create user pizzaman with encrypted password 'peperoni';'
-### sudo -u postgres psql -c 'create database pizza WITH OWNER pizzaman;'
-### sudo -u postgres psql -c CREATE EXTENSION postgis;'
+# sudo apt update
+# sudo apt install postgresql postgresql-contrib postgis postgresql-11-postgis-2.5
+# sudo -u postgres psql -c 'create user pizzaman with encrypted password 'peperoni';'
+# sudo -u postgres psql -c 'create database pizza WITH OWNER pizzaman;'
+# sudo -u postgres psql -c CREATE EXTENSION postgis;'
 
 
-Install and set up virtualenv:
-### mkdir .virtualenv
-### sudo apt install python3-pip
-### pip3 install virtualenv
-### pip3 install virtualenvwrapper
+##Install and set up virtualenv:
+# mkdir .virtualenv
+# sudo apt install python3-pip
+# pip3 install virtualenv
+# pip3 install virtualenvwrapper
+
+
 ##Insert the following code to you .bashrc file:
+
 ``` bash
-code = "
+
 #Virtualenvwrapper settings:
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV=/home/goran/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh "
-puts"#{code}"
 
-
+```
 
 
 And repeat
