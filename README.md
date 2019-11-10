@@ -33,7 +33,7 @@ DELETE order example:
 
 git clone https://github.com/VitorSDDF/django-rest-api-example-with-viewsets.git
 
-#### Install and set up of Postgres:
+#### Install and set up Postgres:
 
 ``` bash
 sudo apt update
@@ -46,10 +46,10 @@ sudo -u postgres psql -c CREATE EXTENSION postgis;'
 #### Install and set up virtualenv:
 
 ``` bash
-# mkdir .virtualenv
-# sudo apt install python3-pip
-# pip3 install virtualenv
-# pip3 install virtualenvwrapper
+mkdir .virtualenv
+sudo apt install python3-pip
+pip3 install virtualenv
+pip3 install virtualenvwrapper
 ```
 
 #### Insert the following code to you .bashrc file:
@@ -82,6 +82,5 @@ source ~/.local/bin/virtualenvwrapper.sh "
 
 python manage.py test
 
-for testing the orders endpoint http methods
 
 
