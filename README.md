@@ -29,9 +29,9 @@ DELETE order example:
 
 ### Installing
 
-Installation on ubuntu 18.04
+### Installation on ubuntu 18.04
 
-###Install and set up of Postgres:
+#### Install and set up of Postgres:
 
 ``` bash
 sudo apt update
@@ -41,7 +41,7 @@ sudo -u postgres psql -c 'create database pizza WITH OWNER pizzaman;'
 sudo -u postgres psql -c CREATE EXTENSION postgis;'
 ```
 
-##Install and set up virtualenv:
+#### Install and set up virtualenv:
 
 ``` bash
 # mkdir .virtualenv
@@ -50,7 +50,7 @@ sudo -u postgres psql -c CREATE EXTENSION postgis;'
 # pip3 install virtualenvwrapper
 ```
 
-##Insert the following code to you .bashrc file:
+#### Insert the following code to you .bashrc file:
 
 ``` bash
 
