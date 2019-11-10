@@ -2,6 +2,10 @@
 
 One end point with HEAD, GET, POST and PATCH http methods to a pizza ordering simple logic.
 
+POST order:
+
+![Alt text](test_images/order_pizza_berlin.png?raw=true "Example off order creation")
+
 ```
 Give examples
 ```
