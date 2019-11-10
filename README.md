@@ -1,20 +1,29 @@
 # Django simple REST API example with rest_framework ViewSets
 
-One end point with HEAD, GET, POST and PATCH http methods to a pizza ordering simple logic.
+One end point with HEAD, GET, POST ,DELETE and PATCH http methods to a pizza ordering simple logic.
+GET end points to other data information
 
 POST order example:
 
 ![Alt text](test_images/order_pizza_berlin.png?raw=true "Example off order creation")
 
-GET example:
+GET examples:
 
-![Alt text](test_images/order_list.png?raw=true "orders GET")
+![Alt text](test_images/order_list.png?raw=true "list orders through GET")
+![Alt text](test_images/get_order.png?raw=true "get  order through GET")
+![Alt text](test_images/filter_order.png?raw=true "filter orders through GET")
 
 Updating order using PATCH:
 
 ![Alt text](test_images/update_order_patch.png?raw=true "orders PATCH")
 
+PATCH validation response:
+
 ![Alt text](test_images/change_status.png?raw=true "validation in PATCH update")
+
+DELETE order example:
+
+![Alt text](test_images/delete_order.png?raw=true "validation in PATCH update")
 
 ### Installing
 
