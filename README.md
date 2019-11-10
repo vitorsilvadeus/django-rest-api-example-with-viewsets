@@ -2,13 +2,19 @@
 
 One end point with HEAD, GET, POST and PATCH http methods to a pizza ordering simple logic.
 
-POST order:
+POST order example:
 
 ![Alt text](test_images/order_pizza_berlin.png?raw=true "Example off order creation")
 
-```
-Give examples
-```
+GET example:
+
+![Alt text](test_images/order_list.png?raw=true "orders GET")
+
+Updating order using PATCH:
+
+![Alt text](test_images/update_order_patch.png?raw=true "orders PATCH")
+
+![Alt text](test_images/change_status.png?raw=true "validation in PATCH update")
 
 ### Installing
 
@@ -16,9 +22,7 @@ A step by step series of examples that tell you how to get a development env run
 
 Say what the step will be
 
-```
-Give the example
-```
+
 
 And repeat
 

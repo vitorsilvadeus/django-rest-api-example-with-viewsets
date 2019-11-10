@@ -10,6 +10,6 @@ class OrderSerializer(GeoFeatureModelSerializer):
         fields = ('id','customer','destination','pizzas','status')
 
     def validate_status(self, value):
-        if self.instance and value in Status.objects.filter(imutable=True):
+        if self.instance and self.instance.status.imutable == True:
             raise ValidationError("The actual delivery status is not mutable.")
         return value
