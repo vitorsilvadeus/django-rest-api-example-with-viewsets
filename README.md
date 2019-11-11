@@ -36,7 +36,7 @@ DELETE order example:
 
 ``` bash
 sudo apt update
-sudo apt install postgresql postgresql-contrib postgis gdal-bin python3.6-dev git
+sudo apt install postgresql postgresql-contrib postgis gdal-bin python3.6-dev libpq-dev git
 sudo -u postgres psql -c "create user pizzaman with encrypted password 'peperoni';"
 sudo -u postgres psql -c "create database pizza WITH OWNER pizzaman;"
 sudo -u postgres psql -c "CREATE EXTENSION postgis;"
@@ -67,7 +67,8 @@ export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh "
 
 ```
-Then run source ~/.bashrc
+Then run:
+source ~/.bashrc
 mkvirtualenv pizza
 
 #### Install virtualenv dependencies:
