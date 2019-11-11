@@ -38,6 +38,7 @@ DELETE order example:
 sudo apt update
 sudo apt install postgresql postgresql-contrib postgis gdal-bin python3.6-dev libpq-dev git
 sudo -u postgres psql -c "create user pizzaman with encrypted password 'peperoni';"
+sudo -u postgres psql -c "alter role pizzam superuser;"
 sudo -u postgres psql -c "create database pizza WITH OWNER pizzaman;"
 sudo -u postgres psql -c "CREATE EXTENSION postgis;"
 ```
@@ -79,7 +80,6 @@ mkvirtualenv pizza
 
 #### Set up the server:
 ``` bash
-    python manage.py makemigrations
     python manage.py migrate
     python manage.py loaddata pizza
     python manage.py runserver
