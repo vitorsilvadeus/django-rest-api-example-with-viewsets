@@ -31,17 +31,21 @@ DELETE order example:
 
 ### Installation on ubuntu 18.04
 
-git clone https://github.com/VitorSDDF/django-rest-api-example-with-viewsets.git
 
 #### Install and set up Postgres:
 
 ``` bash
 sudo apt update
-sudo apt install postgresql postgresql-contrib postgis gdal-bin python3.6-dev
+sudo apt install postgresql postgresql-contrib postgis gdal-bin python3.6-dev git
 sudo -u postgres psql -c "create user pizzaman with encrypted password 'peperoni';"
 sudo -u postgres psql -c "create database pizza WITH OWNER pizzaman;"
 sudo -u postgres psql -c "CREATE EXTENSION postgis;"
 ```
+
+#### Clone the reposotory
+
+git clone https://github.com/VitorSDDF/django-rest-api-example-with-viewsets.git
+
 
 #### Install and set up virtualenv:
 
@@ -59,11 +63,12 @@ pip3 install virtualenvwrapper
 #Virtualenvwrapper settings:
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_VIRTUALENV=/home/goran/.local/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh "
 
 ```
 Then run source ~/.bashrc
+mkvirtualenv pizza
 
 #### Install virtualenv dependencies:
 
