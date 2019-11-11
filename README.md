@@ -37,10 +37,10 @@ git clone https://github.com/VitorSDDF/django-rest-api-example-with-viewsets.git
 
 ``` bash
 sudo apt update
-sudo apt install postgresql postgresql-contrib postgis postgresql-11-postgis-2.5 gdal-bin python3.6-dev
-sudo -u postgres psql -c 'create user pizzaman with encrypted password 'peperoni';'
-sudo -u postgres psql -c 'create database pizza WITH OWNER pizzaman;'
-sudo -u postgres psql -c CREATE EXTENSION postgis;'
+sudo apt install postgresql postgresql-contrib postgis gdal-bin python3.6-dev
+sudo -u postgres psql -c "create user pizzaman with encrypted password 'peperoni';"
+sudo -u postgres psql -c "create database pizza WITH OWNER pizzaman;"
+sudo -u postgres psql -c "CREATE EXTENSION postgis;"
 ```
 
 #### Install and set up virtualenv:
@@ -63,6 +63,7 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/home/goran/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh "
 
 ```
+Then run source ~/.bashrc
 
 #### Install virtualenv dependencies:
 
