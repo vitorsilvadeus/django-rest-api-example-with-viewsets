@@ -36,9 +36,9 @@ DELETE order example:
 
 ``` bash
 sudo apt update
-sudo apt install postgresql postgresql-contrib postgis gdal-bin python3.6-dev libpq-dev git
+sudo apt install postgresql postgresql-contrib postgis gdal-bin python3.6-dev libpq-dev
 sudo -u postgres psql -c "create user pizzaman with encrypted password 'peperoni';"
-sudo -u postgres psql -c "alter role pizzam superuser;"
+sudo -u postgres psql -c "alter role pizzaman superuser;"
 sudo -u postgres psql -c "create database pizza WITH OWNER pizzaman;"
 sudo -u postgres psql -c "CREATE EXTENSION postgis;"
 ```
