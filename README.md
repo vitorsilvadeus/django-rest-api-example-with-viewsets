@@ -57,7 +57,7 @@ pip3 install virtualenv
 pip3 install virtualenvwrapper
 ```
 
-#### Insert the following code to you .bashrc file:
+#### Insert the following code to your .bashrc file:
 
 ``` bash
 
@@ -69,8 +69,7 @@ source ~/.local/bin/virtualenvwrapper.sh "
 
 ```
 Then run:
-source ~/.bashrc
-mkvirtualenv pizza
+source ~/.bashrc && mkvirtualenv pizza
 
 #### Install virtualenv dependencies:
 
