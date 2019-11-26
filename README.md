@@ -36,7 +36,7 @@ DELETE order example:
 
 ``` bash
 sudo apt update
-sudo apt install postgresql postgresql-contrib postgis gdal-bin python3.6-dev libpq-dev
+sudo apt install postgresql postgresql-contrib postgis gdal-bin libpq-dev
 sudo -u postgres psql -c "create user pizzaman with encrypted password 'peperoni';"
 sudo -u postgres psql -c "alter role pizzaman superuser;"
 sudo -u postgres psql -c "create database pizza WITH OWNER pizzaman;"
@@ -52,7 +52,7 @@ git clone https://github.com/VitorSDDF/django-rest-api-example-with-viewsets.git
 
 ``` bash
 mkdir .virtualenv
-sudo apt install python3-pip
+sudo apt install python3-pip python3.6-dev
 pip3 install virtualenv
 pip3 install virtualenvwrapper
 ```

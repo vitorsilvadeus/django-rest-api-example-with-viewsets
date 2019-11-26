@@ -30,7 +30,6 @@ class TestOrderViewSet(TestCase):
 
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 201)
-        self.assertTrue(response.data)
 
     def test_patch(self):
         url = reverse('orders-detail', args=[Order.objects.all().first().id])
