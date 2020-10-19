@@ -1,6 +1,6 @@
 from rest_framework_gis.serializers import GeoFeatureModelSerializer
 from rest_framework.serializers import ModelSerializer, ValidationError
-from pizza.models import Order, Status, Pizza
+from pizza.models import Order, Status, Pizza, Customer
 
 class OrderSerializer(GeoFeatureModelSerializer):
 
@@ -32,5 +32,5 @@ class StatusSerializer(ModelSerializer):
 class CustomerSerializer(ModelSerializer):
 
     class Meta:
-        model = Status
+        model = Customer
         fields = ('id','name','phone')

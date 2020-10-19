@@ -1,5 +1,5 @@
 from django.test import TestCase
-from pizza.models import Order, Customer, Pizza, Status
+from pizza.models import Order, Customer, Pizza, Status, PizzaSize, Flavor
 from pizza.serializers import OrderSerializer
 # from django.contrib.gis.geos import GEOSGeometry
 from django.urls import reverse
@@ -16,7 +16,7 @@ class TestOrderViewSet(TestCase):
         self.assertTrue(response.data)
 
     def test_delete(self):
-        url = reverse('orders-detail',args=[Order.objects.all().first().id])
+        url = reverse('orders-detail',args=[Order.objects.first().id])
 
         response = self.client.delete(url)
         self.assertEqual(response.status_code, 204)
@@ -25,7 +25,7 @@ class TestOrderViewSet(TestCase):
         url = reverse('orders-list')
 
         data = {
-            'customer': Customer.objects.all().first().id,
+            'customer': Customer.objects.first().id,
             'destination': 'POINT(-47.92972 15.77972 )',
             'pizzas': Pizza.objects.all().values_list('id',flat=True)
         }
@@ -34,7 +34,7 @@ class TestOrderViewSet(TestCase):
         self.assertEqual(response.status_code, 201)
 
     def test_patch(self):
-        url = reverse('orders-detail', args=[Order.objects.all().first().id])
+        url = reverse('orders-detail', args=[Order.objects.first().id])
         pizzas = list(Pizza.objects.filter(flavor__name='pepperoni').values_list('id', flat=True))
         data = {
             'customer': Customer.objects.all().first().id,
@@ -44,7 +44,7 @@ class TestOrderViewSet(TestCase):
         }
         response = self.client.patch(url, data, content_type='application/json')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(list(Order.objects.all().first().pizzas.all().values_list('id', flat=True)), pizzas)
+        self.assertEqual(list(Order.objects.first().pizzas.all().values_list('id', flat=True)), pizzas)
 
 
 class TestOrderSerializer(TestCase):
@@ -75,3 +75,59 @@ class TestOrderSerializer(TestCase):
                 }
             ).is_valid()
         )
+
+
+class TestPizzaViewSet(TestCase):
+    #Only get and head are allowed
+    fixtures = ['pizza']
+
+    def test_get(self):
+        url = reverse('pizzas-list')
+
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.data)
+
+
+class TestStatusViewSet(TestCase):
+    #Only get and head are allowed
+    fixtures = ['pizza']
+
+    def test_get(self):
+        url = reverse('statuses-list')
+
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.data)
+
+
+class TestCustomerViewSet(TestCase):
+
+    fixtures = ['pizza']
+    #delete is not allowed
+    def test_get(self):
+        url = reverse('customers-list')
+
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.data)
+
+    def test_post(self):
+        url = reverse('customers-list')
+
+        data = {
+            'name': 'Vitor Silva',
+            'phone': '999999999'
+        }
+
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, 201)
+
+    def test_patch(self):
+        url = reverse('customers-detail', args=[Customer.objects.first().id])
+        data = {
+            'phone': '66666666'
+        }
+        response = self.client.patch(url, data, content_type='application/json')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(Customer.objects.first().phone, data['phone'])
